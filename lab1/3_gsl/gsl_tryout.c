@@ -3,7 +3,6 @@
 #include <stdio.h>
 
 int main(int argc, char const *argv[]) {
-  printf("%s\n", "kierwa" );
   double x = 4096.0;
   int iterations = 1500;
   for(int i=0; i<iterations; i++){
