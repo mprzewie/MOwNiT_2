@@ -30,7 +30,7 @@ double get_system_time(){
     struct rusage ru;
     getrusage(RUSAGE_SELF, &ru);
     tim = ru.ru_stime;
-    double t = (double)tim.tv_sec * 1000.0 + tim.tv_usec / 1000.0;
+    double t = (double)tim.tv_sec  + tim.tv_usec / 1000000.0;
     return t;
 }
 
@@ -39,14 +39,14 @@ double get_user_time(){
     struct rusage ru;
     getrusage(RUSAGE_SELF, &ru);
     tim = ru.ru_utime;
-    double t = (double)tim.tv_sec * 1000.0 + tim.tv_usec / 1000.0;
+    double t = (double)tim.tv_sec + tim.tv_usec / 1000000.0;
     return t;
 }
 
 double get_real_time(){
     struct timeval tim;
     gettimeofday(&tim,NULL);
-    double t = (double)tim.tv_sec * 1000.0 + tim.tv_usec / 1000.0;
+    double t = (double)tim.tv_sec + tim.tv_usec / 1000000.0;
     return t;
 }
 

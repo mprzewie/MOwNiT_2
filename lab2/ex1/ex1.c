@@ -133,8 +133,8 @@ void matrix_analysis(int max_size, int stride, int trials){
 int
 main (void)
 {
-  int vector_max_size = 10000;
-  int vector_stride = 100;
+  int vector_max_size = 1000;
+  int vector_stride = 1000;
   int matrix_max_size = 100; //50
   int matrix_stride = 100;
   int trials = 10;
@@ -143,7 +143,7 @@ main (void)
   printf("Analyzing vector*vector multiplication.\n" );
   vector_analysis(vector_max_size, vector_stride, trials);
   printf("Analyzing matrix*vector multiplication.\n" );
-  matrix_analysis(matrix_max_size, matrix_stride, trials);
+  // matrix_analysis(matrix_max_size, matrix_stride, trials);
   cleanup_results(results_size);
 
   return 0;
